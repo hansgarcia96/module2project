@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,33 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
+
 <body>
+
+  <nav>
+
+    {{#if currentUser}}
+
+    <h3>Hello, {{currentUser.username}}</h3>
+
+    <form action="/logout" method="GET">
+      <button>LOGOUT</button>
+    </form>
+
+    <a href="/nasa">NASA</a>
+
+    {{else}}
+
+    <a href="/login">LOGIN</a>
+
+    <a href="/signup">SIGNUP</a>
+    {{/if}}
+
+  </nav>
 
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
