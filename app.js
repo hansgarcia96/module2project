@@ -18,7 +18,7 @@ const MongoStore = require("connect-mongo")(session);
 
 const User = require("./models/User");
 
-
+let nasaApi = 'https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub'
 
 
 
