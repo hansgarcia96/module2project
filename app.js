@@ -67,7 +67,7 @@ app.locals.title = "WhiteStar";
 // PASSPORT MIDDLEWARE
 app.use(
   session({
-    secret: "our-passport-local-strategy-app",
+    secret: "nebula",
     resave: true,
     saveUninitialized: true
   })
@@ -123,8 +123,8 @@ app.use((req, res, next) => {
   next();
 });
 
-const index = require("./routes/index");
-app.use("/", index);
+const landing = require("./routes/landing");
+app.use("/", landing);
 
 // AUTH ROUTE
 const authRoutes = require("./routes/auth-routes");

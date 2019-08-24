@@ -1,24 +1,35 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/User");
+
+// password stuff
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 12;
 const passport = require("passport");
-const ensureLogin = require("connect-ensure-login");
 
+
+// User model
+const User           = require("../models/User");
+
+// GET Sign-up route
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
+// Post Sign-up route
 router.post("/signup", (req, res, next) => {
+  
+  const email    = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
+  const image    = req.body.image;
 
+  // validate username and password
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
   }
 
+  // check to see if indicated username is already defined in the database
   User.findOne({ username })
     .then(user => {
       if (user !== null) {
@@ -29,9 +40,12 @@ router.post("/signup", (req, res, next) => {
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
 
+      // creating the new user with User model schema
       const newUser = new User({
+        email,
         username,
-        password: hashPass
+        password: hashPass,
+        image
       });
 
       newUser.save(err => {
@@ -47,10 +61,12 @@ router.post("/signup", (req, res, next) => {
     });
 });
 
+// GET log-in
 router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
 
+// POST login
 router.post(
   "/login",
   passport.authenticate("local", {
@@ -61,6 +77,7 @@ router.post(
   })
 );
 
+// GET logout
 router.get("/logout", (req,res, next) =>{
   req.logout();
   res.redirect("/")
