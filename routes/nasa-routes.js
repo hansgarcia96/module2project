@@ -2,19 +2,50 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-let nasaApi =
-  "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub";
+// let nasaApi =
+//   "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub";
 
+
+// const nasaApi = axios.create({
+//     baseURL: 'https://api.nasa.gov/planetary/apod?api_key=SgXTB67gSWsxf28q1AWTVhPHv5sFG21xsZnUskIt'
+// });
+
+// function getNasaApi()
+
+
+// WORKING WITH AXIOS
 axios
   .get(
     "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub"
   )
   .then(response => {
-    console.log(response);
+    return response;
+  })
+  .then(data => {
+    console.log(data);
   })
   .catch(err => {
     console.log("Its not working");
   });
+
+// NOT WORKING FETCH
+// function getNasa() {
+//   fetch("nasaApi.json")
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data);
+//     });
+// }
+// console.log(getNasa)
+
+// function getNasa() {
+//   fetch(nasaApi)
+//     .then(res => res.json())
+//     .then(data => {
+//       console.log(data);
+//     });
+// }
+
 
 router.get("/nasa", (req, res, next) => {
   // var req = new XMLHttpRequest();
