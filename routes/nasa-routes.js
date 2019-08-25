@@ -14,19 +14,41 @@ const axios = require("axios");
 
 
 // WORKING WITH AXIOS
-axios
-  .get(
-    "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub"
-  )
-  .then(response => {
-    return response;
-  })
-  .then(data => {
-    //console.log(data);
-  })
-  .catch(err => {
-    console.log("Its not working");
-  });
+// axios
+//   .get(
+//     "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub"
+//   )
+//   .then(response => {
+//     return response;
+//   })
+//   .then(data => {
+//     //console.log(data);
+//   })
+//   .catch(err => {
+//     console.log("Its not working");
+//   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // NOT WORKING FETCH
 // function getNasa() {
@@ -45,6 +67,27 @@ axios
 //       console.log(data);
 //     });
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 router.get("/nasa", (req, res, next) => {

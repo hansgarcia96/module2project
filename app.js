@@ -134,4 +134,8 @@ app.use("/", authRoutes);
 const nasaRoutes = require("./routes/nasa-routes");
 app.use("/", nasaRoutes);
 
+// SPACEX ROUTE
+const spacexRoutes = require("./routes/spacex-routes");
+app.use("/", spacexRoutes);
+
 module.exports = app;
