@@ -1,15 +1,12 @@
-<form action="/user/edit?user_id={{user_id}}" method="post">
+<form action="/user/edit/" method="post">
   <label for="">email:</label>
-  <input type="text" name="email">
+  <input type="text" name="email" value="{{user.email}}">
 
   <label for="">username:</label>
-  <input type="text" name="username">
-
-  <label for="">Password:</label>
-  <input type="text" name="password">
+  <input type="text" name="username" value="{{user.username}}">
 
   <label for="">image url:</label>
-  <input type="number" name="image">
+  <input type="text" name="image" value="{{user.image}}">
 
   <button type="submit">EDIT</button>
 </form>

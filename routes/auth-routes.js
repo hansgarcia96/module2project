@@ -98,9 +98,21 @@ router.get("/user/profile", (req, res, next) => {
 
 }) */
 
-router.get("/user/edit", (req,res, next) => {
+router.get("/user/edit/:id", (req,res, next) => {
 
-  res.render("auth/user-edit")
+  const theUserID = req.params.id;
+  console.log('the userID is: ', theUserID);
+  
+  User.findById(theUserID)
+    .then((userInfo) => {
+      console.log(userInfo);
+      res.render("auth/user-edit", { user: userInfo})
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+
+ // res.render("auth/user-edit")
 
 })
 
