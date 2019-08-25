@@ -59,3 +59,18 @@ a {
   padding: 20px;
   width: 100%;
 }
+
+#container {
+  display: flex;
+  justify-content: center;
+  height: 400px; /* or other desired height */
+  width: 415px;
+  overflow: hidden;
+}
+
+#profile-picture {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}

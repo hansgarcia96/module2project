@@ -77,6 +77,11 @@ router.post(
   })
 );
 
+// Get route to edit user
+router.get("/user/edit", (req,res, next) => {
+  res.render("auth/user-edit");
+})
+
 // GET logout
 router.get("/logout", (req,res, next) =>{
   req.logout();
