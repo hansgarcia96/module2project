@@ -70,16 +70,38 @@ router.get("/login", (req, res, next) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/user/profile",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
   })
 );
 
-// Get route to edit user
+// GET route to user-profile
+router.get("/user/profile", (req, res, next) => {
+  res.render("auth/user-profile");
+})
+
+// GET route to edit user
+/* router.get("/user/edit/:userID", (req,res, next) => {
+
+  const userID = req.params.userID
+  User
+    .findbyId(userID)
+    .then((result) => {
+      console.log("result is \n", result)
+      res.render("auth/user-edit", {result})
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+
+}) */
+
 router.get("/user/edit", (req,res, next) => {
-  res.render("auth/user-edit");
+
+  res.render("auth/user-edit")
+
 })
 
 // GET logout

@@ -1,0 +1,11 @@
+    {{#if currentUser}}
+    
+    <h3>Hello, {{currentUser.username}}</h3>
+
+    <div id="container">
+    <img id="profile-picture" src="{{currentUser.image}}" alt="profile_pic">
+    </div>
+
+    {{/if}}
+
+    <a href="/nasa">NASA</a>

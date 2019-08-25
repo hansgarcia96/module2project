@@ -22,7 +22,7 @@ axios
     return response;
   })
   .then(data => {
-    console.log(data);
+    //console.log(data);
   })
   .catch(err => {
     console.log("Its not working");
