@@ -10,11 +10,11 @@ const logger = require("morgan");
 const path = require("path");
 
 const session = require("express-session");
+const bcrypt = require("bcryptjs");
+
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcryptjs");
 const flash = require("connect-flash");
-const MongoStore = require("connect-mongo")(session);
 
 const User = require("./models/User");
 
@@ -67,7 +67,7 @@ app.locals.title = "WhiteStar";
 // PASSPORT MIDDLEWARE
 app.use(
   session({
-    secret: "nebula",
+    secret: "our-passport-local-strategy-app",
     resave: true,
     saveUninitialized: true
   })
@@ -88,6 +88,8 @@ passport.deserializeUser((id, cb) => {
 });
 
 app.use(flash());
+
+
 
 passport.use(
   new LocalStrategy(

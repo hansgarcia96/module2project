@@ -6,11 +6,11 @@ const axios = require("axios");
 const SpacexApiWrapper = require("spacex-api-wrapper");
 
 SpacexApiWrapper.info().then(function(data) {
-  console.log(data);
+  //console.log(data);
 });
 
 SpacexApiWrapper.getNextLaunch().then(function(data) {
-  console.log(data);
+  //console.log(data);
   
 });
 
