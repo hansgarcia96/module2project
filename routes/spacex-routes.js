@@ -11,7 +11,6 @@ SpacexApiWrapper.info().then(function(data) {
 
 SpacexApiWrapper.getNextLaunch().then(function(data) {
   //console.log(data);
-  
 });
 
 module.exports = router;
