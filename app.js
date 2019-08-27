@@ -10,11 +10,11 @@ const logger = require("morgan");
 const path = require("path");
 
 const session = require("express-session");
+const bcrypt = require("bcryptjs");
+
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcryptjs");
 const flash = require("connect-flash");
-const MongoStore = require("connect-mongo")(session);
 
 const User = require("./models/User");
 
@@ -22,15 +22,13 @@ let nasaApi = 'https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctu
 
 
 
+mongoose.Promise = Promise;
 mongoose
-  .connect("mongodb://localhost/whitestar", { useNewUrlParser: true })
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error("Error connecting to mongo", err);
+  .connect('mongodb://localhost/whiteStar', { useNewUrlParser: true })
+  .then(() => {
+    console.log('Connected to Mongo!')
+  }).catch(err => {
+    console.error('Error connecting to mongo', err)
   });
 
 const app_name = require("./package.json").name;
@@ -67,7 +65,7 @@ app.locals.title = "WhiteStar";
 // PASSPORT MIDDLEWARE
 app.use(
   session({
-    secret: "nebula",
+    secret: "our-passport-local-strategy-app",
     resave: true,
     saveUninitialized: true
   })
@@ -88,6 +86,8 @@ passport.deserializeUser((id, cb) => {
 });
 
 app.use(flash());
+
+
 
 passport.use(
   new LocalStrategy(
@@ -118,8 +118,8 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  res.locals.errorMessage = req.flash("error");
-  res.locals.successMessage = req.flash("success");
+  // res.locals.errorMessage = req.flash("error");
+  // res.locals.successMessage = req.flash("success");
   next();
 });
 

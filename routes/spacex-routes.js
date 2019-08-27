@@ -6,6 +6,7 @@ const moment = require("moment");
 // SPACEX API
 const SpacexApiWrapper = require("spacex-api-wrapper");
 
+<<<<<<< HEAD
 // SpacexApiWrapper.info().then(function(data) {
 //   console.log(data);
 // });
@@ -31,6 +32,14 @@ console.log("the launchdate is " + launchDate)
 
   console.log(`The moment starts ` + fromNow)
 
+=======
+SpacexApiWrapper.info().then(function(data) {
+  //console.log(data);
+});
+
+SpacexApiWrapper.getNextLaunch().then(function(data) {
+  //console.log(data);
+>>>>>>> 79445fdab003e10a82c0048676c37b7ec800da9c
 });
 
 

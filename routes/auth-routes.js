@@ -4,8 +4,10 @@ const router = express.Router();
 // password stuff
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 12;
-const passport = require("passport");
 
+// Passport packages
+const passport = require("passport");
+const ensureLogin = require("connect-ensure-login");
 
 // User model
 const User           = require("../models/User");
@@ -63,13 +65,11 @@ router.post("/signup", (req, res, next) => {
 
 // GET log-in
 router.get("/login", (req, res, next) => {
-  res.render("auth/login");
+  res.render("auth/login", { "message": req.flash("error") });
 });
 
 // POST login
-router.post(
-  "/login",
-  passport.authenticate("local", {
+router.post("/login", passport.authenticate("local", {
     successRedirect: "/user/profile",
     failureRedirect: "/login",
     failureFlash: true,
@@ -82,22 +82,8 @@ router.get("/user/profile", (req, res, next) => {
   res.render("auth/user-profile");
 })
 
-// GET route to edit user
-/* router.get("/user/edit/:userID", (req,res, next) => {
 
-  const userID = req.params.userID
-  User
-    .findbyId(userID)
-    .then((result) => {
-      console.log("result is \n", result)
-      res.render("auth/user-edit", {result})
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-
-}) */
-
+// Get route to render user-edit form
 router.get("/user/edit/:id", (req,res, next) => {
 
   const theUserID = req.params.id;
@@ -111,9 +97,20 @@ router.get("/user/edit/:id", (req,res, next) => {
     .catch((err) => {
       console.log(err)
     })
+})
 
- // res.render("auth/user-edit")
+// POST route to recieve info from user-edit form and update
+router.post("/user/update/:id", (req, res, next) => {
 
+    const userID = req.params.id;
+    User
+    .findByIdAndUpdate(userID, req.body)
+    .then(() => {
+      res.redirect("/user/profile")
+    })
+    .catch((err) => {
+      next(err)
+    })
 })
 
 // GET logout
