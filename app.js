@@ -24,7 +24,7 @@ let nasaApi = 'https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctu
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/whiteStar', { useNewUrlParser: true })
+  .connect('mongodb://localhost/whitestar', { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -87,8 +87,6 @@ passport.deserializeUser((id, cb) => {
 
 app.use(flash());
 
-
-
 passport.use(
   new LocalStrategy(
     {
@@ -96,10 +94,13 @@ passport.use(
     },
     (req, username, password, next) => {
       User.findOne({ username }, (err, user) => {
+        console.log("MOTHER FUCKER: ", username)
         if (err) {
+          //console.log("this is the fucking error: \n", err);
           return next(err);
         }
         if (!user) {
+          console.log("this is the fucking error: \n", err);
           return next(null, false, { message: "Incorrect username" });
         }
         if (!bcrypt.compareSync(password, user.password)) {
@@ -118,8 +119,8 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  // res.locals.errorMessage = req.flash("error");
-  // res.locals.successMessage = req.flash("success");
+/*   res.locals.errorMessage = req.flash("error");
+  res.locals.successMessage = req.flash("success");  */
   next();
 });
 

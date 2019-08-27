@@ -78,8 +78,8 @@ router.post("/login", passport.authenticate("local", {
 );
 
 // GET route to user-profile
-router.get("/user/profile", (req, res, next) => {
-  res.render("auth/user-profile");
+router.get("/user/profile", ensureLogin.ensureLoggedIn(),(req, res) => {
+  res.render("auth/user-profile", { user: req.user });
 })
 
 
