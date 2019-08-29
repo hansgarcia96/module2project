@@ -39,7 +39,8 @@ a {
   font-size: 10px;
   z-index: 1;
   opacity: 200.5;
-  height: 688px; }
+  height: 688px; 
+  width: fit-content}
 
 #form label {
   color: #e01515f7;
@@ -68,12 +69,14 @@ a {
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
   transition: .3s ease background;
   width: 100%; }
 
 #form button:hover {
   background: #fff;
-  color: black;
+  color: #e01515f7;
+  font-family: 'Montserrat', sans-serif;
   transition: .3s ease background; }
 
 .error-message {
@@ -81,9 +84,12 @@ a {
   border: solid 1px #e01515f7;
   box-sizing: border-box;
   color: #fff;
-  margin: 0;
-  padding: 0px;
-  width: 100%; }
+  margin: 28px 0;
+  padding: 0;
+  width: 100%; 
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+}
 
 #container {
   display: flex;
