@@ -43,7 +43,7 @@ SpacexApiWrapper.getNextLaunch().then(function(data) {
                         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                         // CONSOLE LOG COUNTDOWN
-                        // console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+                        console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
 
                         // If the count down is finished, write some text
                         if (distance < 0) {
@@ -107,7 +107,7 @@ SpacexApiWrapper.getNextLaunch().then(function(data) {
 }); // end of get next launch route
 
 SpacexApiWrapper.info().then(function(data) {
-  // console.log(data);
+  console.log(data);
 });
 
 SpacexApiWrapper.getNext

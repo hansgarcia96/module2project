@@ -5,7 +5,7 @@ class APIHandler {
   }
 
   getFullList () {
-    const container = $('.characters-container')
+    const container = $('.rockets-container')
 
     axios.get('https://api.spacexdata.com/v3/rockets')
     .then((result) => {
@@ -17,7 +17,7 @@ class APIHandler {
       result.data.map((eachRocket) => {
         let list = 
         `
-        <div class="character-info">
+        <div class="rocket-info">
             <div class="name"> Rocket Id: <span>${eachRocket.id}</span></div>
             <div class="name">Rocket Name: <span>${eachRocket.rocket_name}</span></div>
             <div class="occupation">Description: <span>${eachRocket.description}</span></div>
@@ -34,8 +34,8 @@ class APIHandler {
   }
 
   getOneRegister () {
-    const container = $('.characters-container')
-    const theId     = $('input[name=character-id]').val(); 
+    const container = $('.rockets-container')
+    const theId     = $('input[name=rocket-id]').val(); 
     
     axios.get(`https://api.spacexdata.com/v3/rockets/${theId}`)
     .then((theRocket) => {
@@ -49,7 +49,7 @@ class APIHandler {
       // Display information
       let singleRocket = 
       `
-        <div class="character-info">
+        <div class="rocket-info">
           <div class="name">Rocket ID:  <span>${theRocket.data.id}</span></div>
           <div class="name">Rocket NAME: <span>${theRocket.data.rocket_name}<span></div>
           <div class="weapon">Rocket Description: <span>${theRocket.data.description}</span></div>
@@ -57,7 +57,7 @@ class APIHandler {
         </div>
       `
       container.append(singleRocket);
-      $('input[name=character-id').val('');
+      $('input[name=rocket-id').val('');
     })
   }
 

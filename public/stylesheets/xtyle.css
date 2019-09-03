@@ -1,4 +1,4 @@
-
+/* FOR THE ROCKETS API TEST PAGE */
 * {
   box-sizing: border-box;
 }
@@ -6,7 +6,7 @@
 body {
   font: 14px "Lora", Helvetica, Arial, sans-serif;
   color: white;
-  background: url("../images/spaceX.jpg") no-repeat center center fixed;
+  background: url("../images/space-is-essential.jpeg") no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -44,7 +44,7 @@ button {
   text-align: center;
 }
 
-.characters-container {
+.rockets-container {
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -67,7 +67,7 @@ button {
   margin: 20px 0 0;
 }
 
-.character-info {
+.rocket-info {
   position: relative;
   width: 71%;
   height: 500px;
@@ -78,7 +78,7 @@ button {
   border-radius: 20px;
 }
 
-.character-info div span {
+.rocket-info div span {
   color: #dedede;
   position: absolute;
   left: 50%;
@@ -91,17 +91,17 @@ button {
   vertical-align: top;
 }
 
-.character-form {
+/* .character-form {
   width: 50%;
   margin: 0 auto;
   text-align: left;
   clear: both;
-}
+} */
 
-.character-form label {
+/* .character-form label {
   width: 100px;
   display: inline-block;
-}
+} */
 
 .field {
   margin: 5px 0;

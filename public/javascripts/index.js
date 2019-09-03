@@ -1,15 +1,15 @@
-const charactersAPI = new APIHandler("http://localhost:8000")
+const rocketsAPI = new APIHandler("http://localhost:8000")
 
 $(document).ready( () => {
 
 
   document.getElementById('fetch-all').onclick = function(){
-    charactersAPI.getFullList();
+    rocketsAPI.getFullList();
 
   }
   
   document.getElementById('fetch-one').onclick = function(){
-    charactersAPI.getOneRegister();
+    rocketsAPI.getOneRegister();
   }
   
 /*   document.getElementById('delete-one').onclick = function(){

@@ -17,28 +17,26 @@
 
 <body>
 
+
+  {{#if currentUser}}
   <nav>
-
-    {{#if currentUser}}
-    
-    <form action="/logout" method="GET">
-      <button>LOGOUT</button>
-    </form>
-    <form action="/user/edit/{{currentUser._id}}" method="GET">
-      <button>Edit Profile</button>
-    </form>
-
-    {{/if}}
-
-
+    <h1>
+      WHITESTAR
+    </h1> 
+    <ul>
+      <li><a href="/logout">LOGOUT</a></li>
+      <li><a href="/user/edit/{{currentUser._id}}">EDIT</a></li>
+      <li><a href="#">ROCKETS</a></li>
+      <li><a href="#">MISSIONS</a></li>
+      <li><a href="/nasa">NASA</a></li>
+      <li><a href="/testing">TESTING</a></li>
+    </ul>
   </nav>
+  {{/if}}
+
+
 
   {{{body}}}
-
-  <script src="/javascripts/script.js"></script>
-  <script type="module" src="/javascripts/APIHandler.js"></script>
-  <script type="module" src="/javascripts/index.js"></script>
-
   
 </body>
 
