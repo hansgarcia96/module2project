@@ -18,17 +18,18 @@ const flash = require("connect-flash");
 
 const User = require("./models/User");
 
-let nasaApi = 'https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub'
-
-
+let nasaApi =
+  "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub";
+const SpacexApiWrapper = require("spacex-api-wrapper");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/whitestar', { useNewUrlParser: true })
+  .connect("mongodb://localhost/whitestar", { useNewUrlParser: true })
   .then(() => {
-    console.log('Connected to Mongo!')
-  }).catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.log("Connected to Mongo!");
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
   });
 
 const app_name = require("./package.json").name;
@@ -60,7 +61,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 // default value for title local
-app.locals.title = "WhiteStar";
+app.locals.title = "Whitestar";
 
 // PASSPORT MIDDLEWARE
 app.use(
@@ -94,7 +95,7 @@ passport.use(
     },
     (req, username, password, next) => {
       User.findOne({ username }, (err, user) => {
-        console.log("MOTHER FUCKER: ", username)
+        console.log("MOTHER FUCKER: ", username);
         if (err) {
           //console.log("this is the fucking error: \n", err);
           return next(err);
@@ -119,7 +120,7 @@ app.use(passport.session());
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-/*   res.locals.errorMessage = req.flash("error");
+  /*   res.locals.errorMessage = req.flash("error");
   res.locals.successMessage = req.flash("success");  */
   next();
 });

@@ -6,110 +6,77 @@ const moment = require("moment");
 // SPACEX API
 const SpacexApiWrapper = require("spacex-api-wrapper");
 
-// SPACEX-HOME ROUTE
-router.get("/spacex", (req, res, next) => {
 
-// GET NEXT LAUNCH INFO FROM SPACEX API
+
+
+function countdown(newLaunchTime) {
+  let countDownDate = new Date(newLaunchTime).getTime();
+
+  // Update the count down every 1 second
+  let x = setInterval(function() {
+    // Get today's date and time
+    let now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    let distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      console.log("EXPIRED");
+    }
+  }, 1000);
+}
+
 SpacexApiWrapper.getNextLaunch().then(function(data) {
-  let launchDate = data.launch_date_local;
-  console.log(launchDate);
+  let missionName = data.mission_name;
+  console.log(missionName);
 
-  // UNIX TIME
-  let launchDateUnix = data.launch_date_unix;
-  let launchDateUTC = data.launch_date_utc;
+  let launchtime = data.launch_date_utc;
+  // console.log(launchtime);
 
-  // formated date to work with the countdown
-  perfectLaunchDate = moment(launchDateUTC).format("MMM D, YYYY HH:mm:ss");
-  console.log(perfectLaunchDate);
-
-                      // COUNTDOWN
-                      // Set the date we're counting down to
-                      var countDownDate = new Date(perfectLaunchDate).getTime();
-
-                      // Update the count down every 1 second
-                      var x = setInterval(function() {
-                        // Get today's date and time
-                        var now = new Date().getTime();
-
-                        // Find the distance between now and the count down date
-                        var distance = countDownDate - now;
-
-                        // Time calculations for days, hours, minutes and seconds
-                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                        var hours = Math.floor(
-                          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                        );
-                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                        // CONSOLE LOG COUNTDOWN
-                        // console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
-
-                        // If the count down is finished, write some text
-                        if (distance < 0) {
-                          clearInterval(x);
-                          console.log("EXPIRED");
-                        }
-                      }, 1000); // end of setInterval function
-
-
-
-
-
-
-
-
-
-
-
-                      
-
-  function displayCountdown() {
-    let newDiv = document.createElement("div");
-  
-    
-  
-    document.querySelector(".spacexCountdown").append(newDiv);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  res.render("spacex/spacex-home");
-}); // end of SPACEX-HOME ROUTE
-
-
-
-
-
-  // VERSION 1
-  // Working Date with Broad Time
-  // let now = moment().format();
-  // console.log("now is " + now);
-
-  // var theDay = moment().format();
-  // console.log("the day is " + theDay)
-
-  // let fromNow = moment(launchDate).endOf(launchDate).fromNow()
-
-  // console.log(`The moment starts ` + fromNow)
-}); // end of get next launch route
-
-SpacexApiWrapper.info().then(function(data) {
-  // console.log(data);
+  console.log(countdown(launchtime));
 });
 
-SpacexApiWrapper.getNext
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SPACEX-HOME ROUTE
+// router.get("/spacex", (req, res, next) => {
+
+SpacexApiWrapper.info().then(function(data) {
+  
+  console.log(data)
+});
+
+// SpacexApiWrapper.getPastLaunches().then(function(data) {
+//   return data.json()
+
+  // let flightNumber = data;
+  // console.log("result of pictureLinks", flightNumber);
+// });
 
 module.exports = router; // last line

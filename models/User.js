@@ -6,6 +6,8 @@ const userSchema = new Schema(
     email: String,
     username: String,
     password: String,
+    location: String,
+    follows: String,
     image: {
       type: String,
       default: "https://i.stack.imgur.com/oOE5V.jpg"
