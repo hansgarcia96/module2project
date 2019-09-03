@@ -12,25 +12,29 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
 
+
+  {{#if currentUser}}
   <nav>
-
-    {{#if currentUser}}
-    
-    <form action="/logout" method="GET">
-      <button>LOGOUT</button>
-    </form>
-    <form action="/user/edit/{{currentUser._id}}" method="GET">
-      <button>Edit Profile</button>
-    </form>
-
-    {{/if}}
-
-
+    <h1>
+      WHITESTAR
+    </h1> 
+    <ul>
+      <li><a href="/logout">LOGOUT</a></li>
+      <li><a href="/user/edit/{{currentUser._id}}">EDIT</a></li>
+      <li><a href="#">ROCKETS</a></li>
+      <li><a href="#">MISSIONS</a></li>
+      <li><a href="/nasa">NASA</a></li>
+      <li><a href="/testing">TESTING</a></li>
+    </ul>
   </nav>
+  {{/if}}
+
+
 
   {{{body}}}
 

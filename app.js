@@ -22,6 +22,7 @@ let nasaApi =
   "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub";
 const SpacexApiWrapper = require("spacex-api-wrapper");
 
+
 mongoose.Promise = Promise;
 mongoose
   .connect("mongodb://localhost/whitestar", { useNewUrlParser: true })
@@ -125,15 +126,19 @@ app.use((req, res, next) => {
   next();
 });
 
-const landing = require("./routes/landing");
+const landing      = require("./routes/landing");
 app.use("/", landing);
 
 // AUTH ROUTE
-const authRoutes = require("./routes/auth-routes");
+const authRoutes   = require("./routes/auth-routes");
 app.use("/", authRoutes);
 
+// TEST ROUTE
+const testRoutes   = require("./routes/testing");
+app.use("/", testRoutes)
+
 // NASA ROUTE
-const nasaRoutes = require("./routes/nasa-routes");
+const nasaRoutes   = require("./routes/nasa-routes");
 app.use("/", nasaRoutes);
 
 // SPACEX ROUTE
