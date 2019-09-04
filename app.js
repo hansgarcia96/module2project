@@ -138,11 +138,11 @@ const testRoutes   = require("./routes/testing");
 app.use("/", testRoutes)
 
 // NASA ROUTE
-const nasaRoutes   = require("./routes/nasa-routes");
-app.use("/", nasaRoutes);
+/* const nasaRoutes   = require("./routes/nasa-routes");
+app.use("/", nasaRoutes); */
 
 // SPACEX ROUTE
-const spacexRoutes = require("./routes/spacex-routes");
-app.use("/", spacexRoutes);
+/* const spacexRoutes = require("./routes/spacex-routes");
+app.use("/", spacexRoutes); */
 
 module.exports = app;
