@@ -18,9 +18,9 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
 
 
   // Access launch details
-  let nextMissionName  = nextLaunchData.mission_name;
-  let nextMissionIntel = nextLaunchData.details; 
-  let nextMissionRocket       = nextLaunchData.rocket.rocket_name;
+  let nextMissionName     = nextLaunchData.mission_name;
+  let nextMissionIntel    = nextLaunchData.details; 
+  let nextMissionRocket   = nextLaunchData.rocket.rocket_name;
   
   // Set the date we're counting down to
   let countDownDate = new Date(convertDate).getTime();
