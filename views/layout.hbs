@@ -28,7 +28,7 @@
       <li><a href="/user/edit/{{currentUser._id}}">EDIT</a></li>
       <li><a href="#">ROCKETS</a></li>
       <li><a href="#">MISSIONS</a></li>
-      <li><a href="/nasa">NASA</a></li>
+      {{!-- <li><a href="/nasa">NASA</a></li> --}}
       <li><a href="/testing">TESTING</a></li>
     </ul>
   </nav>
@@ -39,10 +39,9 @@
   {{{body}}}
 
 
-        <div class="countdown-info">
-            <div class="name"> Countdown: <span>${eachRocket.id}</span></div>
-
-         </div>     
+        <div class="countdown-container">
+            <div class="countdown"> Next Launch Countdown:</div>
+        </div>     
   
 
   <script type="text/javascript" src="/javascripts/countdown.js"></script>
