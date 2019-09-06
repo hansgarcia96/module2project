@@ -36,6 +36,8 @@ function countdown(newLaunchTime) {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
+
+    console.log(days)
     let result = (days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
 return result 
     // If the count down is finished, write some text
@@ -69,14 +71,11 @@ $(document).ready(() => {
 container.append(countdown("Jan 5, 2021 15:37:25"));
 
 let theCountdown = 
-`
-<div class="countdown-info">
+`<div class="countdown-info">
 <div class="name"> Countdown: <span>${countdown("Jan 5, 2021 15:37:25")}</span></div>
+</div>`
 
-</div>     
-
-
-`
+console.log(theCountdown)
 
 container.append(theCountdown);
 }, false);
