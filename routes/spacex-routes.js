@@ -5,8 +5,7 @@ const moment = require("moment");
 
 // SPACEX API
 const SpacexApiWrapper = require("spacex-api-wrapper");
-
-
+const spacexAPI = new SpacexApiWrapper();
 
 
 function countdown(newLaunchTime) {
@@ -29,8 +28,8 @@ function countdown(newLaunchTime) {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
-
+    // console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+ 
     // If the count down is finished, write some text
     if (distance < 0) {
       clearInterval(x);
@@ -48,6 +47,14 @@ SpacexApiWrapper.getNextLaunch().then(function(data) {
 
   console.log(countdown(launchtime));
 });
+
+router.get('/countdown', (req, res, next) => {
+  spacexAPI.getNextLaunch()
+    .then(nextLaunch => {
+      res.render("countdown", nextLaunch[0])
+      console.log(nextLaunch[0])
+    })
+})
 
 
 
