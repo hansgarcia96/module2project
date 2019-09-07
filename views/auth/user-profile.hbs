@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<title>User Profile</title>
+</head>
+<body>
+  
+
+    
     {{#if currentUser}}
     
     <h3>Hello, {{currentUser.username}}</h3>
@@ -6,6 +23,25 @@
     <img id="profile-picture" src="{{currentUser.image}}" alt="profile_pic">
     </div>
 
+    <div class="countdown-container">
+        <div class="countdown"> Next Launch Countdown:</div>
+    </div>     
+    
+    
     {{/if}}
+  
+
+<script type="text/javascript" src="/javascripts/countdown.js"></script>
+
+</body>
+</html>
+
+    
+    
+    
+    
+    
+    
+    
 
     

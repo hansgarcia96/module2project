@@ -130,16 +130,20 @@ const landing      = require("./routes/landing");
 app.use("/", landing);
 
 // AUTH ROUTE
-const authRoutes   = require("./routes/auth-routes");
+const authRoutes    = require("./routes/auth-routes");
 app.use("/", authRoutes);
 
 // ROCKET ROUTE
-const rocketRoutes = require("./routes/rockets");
+const rocketRoutes  = require("./routes/rockets");
 app.use("/", rocketRoutes);
 
 // MISSION ROUTE
 const missionRoutes = require("./routes/missions");
 app.use("/", missionRoutes);
+
+// NEWS ROUTE
+const newsRoutes    = require("./routes/news");
+app.use("/", newsRoutes);
 
 // NASA ROUTE
 /* const nasaRoutes   = require("./routes/nasa-routes");

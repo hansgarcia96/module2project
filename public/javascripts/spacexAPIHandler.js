@@ -4,6 +4,7 @@ class APIHandler {
     this.BASE_URL = baseUrl;
   }
 
+  /////////////////////////////////GET LIST OF ROCKETS////////////////////////////////////////////
   getFullListRockets () {
 
     const container = $('.rockets-container')
@@ -16,6 +17,7 @@ class APIHandler {
 
       // display the data
       result.data.map((eachRocket) => {
+
         let list = 
         `
         <div class="rocket-info">
@@ -34,6 +36,7 @@ class APIHandler {
     })
   }
 
+  /////////////////////////////////////GET ONE ROCKET//////////////////////////////////
   getOneRocket () {
 
     const container = $('.rockets-container')
@@ -63,6 +66,7 @@ class APIHandler {
     })
   }
 
+  ///////////////////////////////////GET FULL LIST OF MISSIONS//////////////////////////////
   getFullListMissions () {
 
     const container = $('.missions-container')
@@ -94,6 +98,7 @@ class APIHandler {
     })
   }
 
+  ////////////////////////////////////GET ONE MISSION///////////////////////////////////////
   getOneMission () {
 
     const container = $('.missions-container')
@@ -103,7 +108,6 @@ class APIHandler {
     .then((singleMission) => {
 
       console.log("the single mission name is: ", singleMission.data.mission_name);
-
 
       container.html("");
 
@@ -122,6 +126,41 @@ class APIHandler {
     })
     .catch((err) => {
       console.log("An error occure during getOneMission()", err);
+    })
+  }
+
+  ////////////////////////////////////////GET NEWS///////////////////////////////////////////////
+  getNews () {
+
+    const container = $('.news-container')
+
+    axios.get('https://spaceflightnewsapi.net/api/v1/articles?news_site=spacex')
+    .then((result) => {
+
+      console.log("the news object is: ", result);
+      console.log('the news.data is: ', result.data);
+      console.log('the news.data.docs is: ', result.data.docs);
+
+      container.html("");
+
+      // display the data
+      result.data.docs.map((eachNews) => {
+        
+        let list = 
+        `
+        <div class="news-info">
+            <div class="title"> Title: <span>${eachNews.title}</span></div>
+            <div class="site">Site: <span>${eachNews.news_site_long}</span></div>
+            <div class="url"> url: <span><a href="${eachNews.url}">${eachNews.url}</a></span></div>
+            <div class="image"> <img src="${eachNews.featured_image}"> </div>
+         </div>         
+        `
+        // append to container
+        container.append(list);
+      })
+    })
+    .catch((err) => {
+      console.log("An error occure during getNews()", err);
     })
   }
 

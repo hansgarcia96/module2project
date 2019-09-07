@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/news-style.css"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<title>News</title>
+</head>
+<body>
+  <section class="container">
+    <h1>Space X News</h1>
+    <div class="news-container">
+      <div class="news-info">
+        <div class="title"></div>
+        <div class="site"></div>
+        <div class="url"></div>
+        <div class="image"></div>
+      </div>
+    </div>
+    <section class="operations">
+      <div class="operation">
+        <button id="fetch-missions">Fetch all</button>
+      </div>
+      <div class="operation">
+        <label for="news-id">Search by Mission ID: </label>
+        <input type="text" name="news-id">
+        <button id="fetch-news">Fetch one</button>
+      </div>
+
+
+    </section>
+  </section>
+
+  <script type="text/javascript" src="/javascripts/spacexAPIHandler.js"></script>
+  <script type="text/javascript" src="/javascripts/newsIndex.js"></script>
+</body>
+</html>
