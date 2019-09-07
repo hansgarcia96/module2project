@@ -133,9 +133,17 @@ app.use("/", landing);
 const authRoutes   = require("./routes/auth-routes");
 app.use("/", authRoutes);
 
-// TEST ROUTE
-const testRoutes   = require("./routes/testing");
-app.use("/", testRoutes)
+// ROCKET ROUTE
+const rocketRoutes = require("./routes/rockets");
+app.use("/", rocketRoutes);
+
+// MISSION ROUTE
+const missionRoutes = require("./routes/missions");
+app.use("/", missionRoutes);
+
+// MAP ROUTE
+const mapRoutes = require("./routes/map");
+app.use("/", mapRoutes);
 
 // NASA ROUTE
 /* const nasaRoutes   = require("./routes/nasa-routes");
