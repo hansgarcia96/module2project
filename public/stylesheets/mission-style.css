@@ -1,4 +1,5 @@
-/* FOR THE ROCKETS API PAGE */
+/* FOR THE MISSION API  */
+
 * {
   box-sizing: border-box;
 }
@@ -44,8 +45,8 @@ button {
   text-align: center;
 }
 
-.rockets-container {
-  width: 100%;
+.missions-container {
+  width: 80%;
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -67,7 +68,7 @@ button {
   margin: 20px 0 0;
 }
 
-.rocket-info {
+.mission-info {
   position: relative;
   width: 71%;
   height: 500px;
@@ -78,7 +79,7 @@ button {
   border-radius: 20px;
 }
 
-.rocket-info div span {
+.mission-info div span {
   color: #dedede;
   position: absolute;
   left: 50%;
@@ -91,28 +92,3 @@ button {
   vertical-align: top;
 }
 
-/* .character-form {
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  clear: both;
-} */
-
-/* .character-form label {
-  width: 100px;
-  display: inline-block;
-} */
-
-.field {
-  margin: 5px 0;
-}
-
-.submit-button {
-  margin: 10px 0 0 120px;
-}
-
-img {
-  max-width:50%;
-  max-height:50%;
-  object-fit: contain;
-}

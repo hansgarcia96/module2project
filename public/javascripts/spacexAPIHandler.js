@@ -4,7 +4,8 @@ class APIHandler {
     this.BASE_URL = baseUrl;
   }
 
-  getFullList () {
+  getFullListRockets () {
+
     const container = $('.rockets-container')
 
     axios.get('https://api.spacexdata.com/v3/rockets')
@@ -33,7 +34,8 @@ class APIHandler {
     })
   }
 
-  getOneRegister () {
+  getOneRocket () {
+
     const container = $('.rockets-container')
     const theId     = $('input[name=rocket-id]').val(); 
     
@@ -61,15 +63,67 @@ class APIHandler {
     })
   }
 
-  createOneRegister () {
+  getFullListMissions () {
 
+    const container = $('.missions-container')
+
+    axios.get('https://api.spacexdata.com/v3/missions')
+    .then((result) => {
+
+      console.log("the mission object is: ", result);
+      container.html("");
+
+      // display the data
+      result.data.map((eachMission) => {
+        
+        let list = 
+        `
+        <div class="mission-info">
+            <div class="name"> Name: <span>${eachMission.mission_name}</span></div>
+            <div class="wikipedia">Wikipida: <span>${eachMission.wikipedia}</span></div>
+            <div class="twitter">Twitter: <span>${eachMission.twitter}</span></div>
+            <div class="description"> <span>${eachMission.description}</span> </div>
+         </div>         
+        `
+        // append to container
+        container.append(list);
+      })
+    })
+    .catch((err) => {
+      console.log("An error occure during getFullListMissions()", err);
+    })
   }
 
-  updateOneRegister () {
+  getOneMission () {
 
+    const container = $('.missions-container')
+    const theId     = $('input[name=mission-id]').val(); 
+    
+    axios.get(`https://api.spacexdata.com/v3/missions/${theId}`)
+    .then((singleMission) => {
+
+      console.log("the single mission name is: ", singleMission.data.mission_name);
+
+
+      container.html("");
+
+      // Display information
+      let mission = 
+      `
+      <div class="mission-info">
+          <div class="name"> Name: <span>${singleMission.data.mission_name}</span></div>
+          <div class="wikipedia">Wikipida: <span>${singleMission.data.wikipedia}</span></div>
+          <div class="twitter">Twitter: <span>${singleMission.data.twitter}</span></div>
+          <div class="description"> <span>${singleMission.data.description}</span> </div>
+       </div>         
+      `
+      container.append(mission);
+      $('input[name=mission-id').val('');
+    })
+    .catch((err) => {
+      console.log("An error occure during getOneMission()", err);
+    })
   }
 
-  deleteOneRegister () {
 
-  }
 }
