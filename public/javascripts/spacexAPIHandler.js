@@ -4,7 +4,7 @@ class APIHandler {
     this.BASE_URL = baseUrl;
   }
 
-  /////////////////////////////////GET LIST OF ROCKETS////////////////////////////////////////////
+  /////////////////////////////////GET LIST OF ROCKETS//////////////////////////////////////////
   getFullListRockets () {
 
     const container = $('.rockets-container')
@@ -36,7 +36,7 @@ class APIHandler {
     })
   }
 
-  /////////////////////////////////////GET ONE ROCKET//////////////////////////////////
+  /////////////////////////////////////GET ONE ROCKET//////////////////////////////////////
   getOneRocket () {
 
     const container = $('.rockets-container')
@@ -66,7 +66,7 @@ class APIHandler {
     })
   }
 
-  ///////////////////////////////////GET FULL LIST OF MISSIONS//////////////////////////////
+  ///////////////////////////////////GET FULL LIST OF MISSIONS///////////////////////////////n
   getFullListMissions () {
 
     const container = $('.missions-container')
@@ -98,7 +98,7 @@ class APIHandler {
     })
   }
 
-  ////////////////////////////////////GET ONE MISSION///////////////////////////////////////
+  ////////////////////////////////////GET ONE MISSION/////////////////////////////////////////
   getOneMission () {
 
     const container = $('.missions-container')
@@ -149,7 +149,6 @@ class APIHandler {
         let list = 
         `
         <div class="news-info">
-            <div class="title"> Title: <span>${eachNews.title}</span></div>
             <div class="site">Site: <span>${eachNews.news_site_long}</span></div>
             <div class="url"> url: <span><a href="${eachNews.url}">${eachNews.url}</a></span></div>
             <div class="image"> <img src="${eachNews.featured_image}"> </div>
