@@ -25,7 +25,7 @@ const SpacexApiWrapper = require("spacex-api-wrapper");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect("mongodb://localhost/whitestar", { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to Mongo!");
   })
