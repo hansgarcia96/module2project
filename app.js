@@ -141,22 +141,12 @@ app.use("/", rocketRoutes);
 const missionRoutes = require("./routes/missions");
 app.use("/", missionRoutes);
 
-<<<<<<< HEAD
 // MAP ROUTE
 const mapRoutes = require("./routes/map");
 app.use("/", mapRoutes);
-=======
 // NEWS ROUTE
 const newsRoutes    = require("./routes/news");
 app.use("/", newsRoutes);
->>>>>>> 8143100b17aa9a73cb5afbf266893f8349fe56cc
 
-// NASA ROUTE
-/* const nasaRoutes   = require("./routes/nasa-routes");
-app.use("/", nasaRoutes); */
-
-// SPACEX ROUTE
-/* const spacexRoutes = require("./routes/spacex-routes");
-app.use("/", spacexRoutes); */
 
 module.exports = app;
