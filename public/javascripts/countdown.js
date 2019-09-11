@@ -48,15 +48,16 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
     // append to container
     $('.countdown-container').html(  
     `
-      <br>
-      <div class="countdown-container">
-      <div class="countdown">Next Launch Countdown: <span>${days + `d ` + hours + `h ` + minutes + `m ` + seconds + `s `}</span></div>
-      <br>
-      <div class="mission-name">Mission Name: <span>${nextMissionName}</span></div>
-      <br>
-      <div class="mission-intel">Mission Intel: <span><p>${nextMissionIntel}</p></span></div>
-      <br>
-      <div class="mission-rocket">Mission Rocket: <span>${nextMissionRocket}</span></div>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+        <h1 class="display-4">Next Launch: <span>${days + `d ` + hours + `h ` + minutes + `m ` + seconds + `s `}</span></h1>
+      
+        <p class="lead">Mission Name: <span>${nextMissionName}</span></p>
+     
+        <p class="lead">Mission Intel: <span><p>${nextMissionIntel}</p></span></p>
+    
+        <p class="lead">Mission Rocket: <span>${nextMissionRocket}</span></p>
+        </div>
       </div>
     `);
   

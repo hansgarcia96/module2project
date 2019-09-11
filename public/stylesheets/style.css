@@ -148,6 +148,12 @@ li a:hover {
   max-height:100%;
 }
 
+.card {
+  margin: -104px 0px 0px 126px;
+}
 
+.navbar-brand {
+  margin-left: 10rem;
+}
 
 /*# sourceMappingURL=style.css.map */

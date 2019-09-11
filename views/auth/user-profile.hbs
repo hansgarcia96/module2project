@@ -17,18 +17,24 @@
     
     {{#if currentUser}}
     
-    <h3>Hello, {{currentUser.username}}</h3>
-
-    <div id="container">
-    <img id="profile-picture" src="{{currentUser.image}}" alt="profile_pic">
+    <div class="jumbotron jumbotron-fluid">
+    <div class="countdown-container">
+        <div class="countdown"></div>
+    </div>
     </div>
 
-    <div class="countdown-container">
-        <div class="countdown"> Next Launch Countdown:</div>
-    </div>     
-    
+
+    <div class="card" style="width: 20rem;">
+      <img src="{{currentUser.image}}" class="card-img-top" alt="profile_pic">
+      <div class="card-body">
+        <h3 class="card-text">Hello, {{currentUser.username}}</h3>
+      </div>
+    </div>
+
     
     {{/if}}
+
+
   
 
 <script type="text/javascript" src="/javascripts/countdown.js"></script>

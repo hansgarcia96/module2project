@@ -81,7 +81,6 @@ button {
 
 .news-info div span {
   color: #dedede;
-  position: absolute;
   left: 50%;
 }
 
@@ -93,7 +92,8 @@ button {
 }
 
 img {
-  max-width: 100%;
+  max-width: 70%;
+
 }
 
 a {
