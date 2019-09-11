@@ -12,18 +12,24 @@ const ensureLogin = require("connect-ensure-login");
 // User model
 const User           = require("../models/User");
 
+const magicUploadMiddleWare = require('../config/cloudinary-thing');
+
 // GET Sign-up route
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
 // Post Sign-up route
-router.post("/signup", (req, res, next) => {
+router.post("/signup", magicUploadMiddleWare.single('image-name-thingy'), (req, res, next) => {
   
   const email    = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
-  const image    = req.body.image;
+  let image = '/images/blah.png';
+  if(req.file){
+    image =  req.file.url;
+  }
+  
 
   // validate username and password
   if (username === "" || password === "") {

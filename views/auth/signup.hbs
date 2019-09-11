@@ -1,7 +1,7 @@
 
 <div class="section">
 
-  <form id="form" action="/signup" method="POST" id="form-container">
+  <form id="form" action="/signup" method="POST" id="form-container" enctype="multipart/form-data">
 
     <h1>
     <label for="username">Username</label><br>
@@ -13,11 +13,10 @@
     <input id="password" type="password" name="password" placeholder="Your password">
     </h1>
 
-    <h1>
-    <label for="img">Profile Picture</label><br>
-    <input type="text" name="image" id="img"
-    placeholder="Paste image url"> 
-    </h1>
+    
+    <label for="img">Profile Picture</label>
+    <input type="file" name="image-name-thingy" id="img"> 
+    
 
     <h1>
     <label for="email">Email</label><br>

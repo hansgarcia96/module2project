@@ -8,10 +8,8 @@ const userSchema = new Schema(
     password: String,
     location: String,
     follows: String,
-    image: {
-      type: String,
-      default: "https://i.stack.imgur.com/oOE5V.jpg"
-    }
+    image: String,
+    
   },
   {
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
