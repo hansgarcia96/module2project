@@ -10,11 +10,11 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
 
   let  convertDate         = new Date(nextLaunchUtc);
   
-  console.log("the next launch data: ", nextLaunchData);
-  console.log("the next launch date-local: ", nextLaunchDateLocal);
-  console.log("the next launch date utc: ", nextLaunchUtc);
-  console.log("the next launch date: ", nextLaunchDate);
-  console.log('the convertDate is: ', convertDate);
+  // console.log("the next launch data: ", nextLaunchData);
+  // console.log("the next launch date-local: ", nextLaunchDateLocal);
+  // console.log("the next launch date utc: ", nextLaunchUtc);
+  // console.log("the next launch date: ", nextLaunchDate);
+  // console.log('the convertDate is: ', convertDate);
 
 
   // Access launch details
@@ -31,12 +31,12 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
     // Get today's date and time
     let now = new Date().getTime();
   
-    console.log('the countdownDate is: ', countDownDate);
-    console.log("the now time is: ", now);
+    // console.log('the countdownDate is: ', countDownDate);
+    // console.log("the now time is: ", now);
   
     // Find the distance between now and the count down date
     let distance = countDownDate  - now;
-    console.log('the distance is: ', distance);
+    // console.log('the distance is: ', distance);
     
   
     // Time calculations for days, hours, minutes and seconds
