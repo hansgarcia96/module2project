@@ -144,16 +144,10 @@ app.use("/", missionRoutes);
 // MAP ROUTE
 const mapRoutes = require("./routes/map");
 app.use("/", mapRoutes);
+
 // NEWS ROUTE
 const newsRoutes    = require("./routes/news");
 app.use("/", newsRoutes);
 
-// NASA ROUTE
-/* const nasaRoutes   = require("./routes/nasa-routes");
-app.use("/", nasaRoutes); */
-
-// SPACEX ROUTE
-const spacexRoutes = require("./routes/spacex-routes");
-app.use("/", spacexRoutes); 
 
 module.exports = app;
