@@ -46,43 +46,52 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
   
     // append to container
-    $('.countdown-container').html(  
+    $('.row').html(  
     `
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-        <h1 class="display-4">Next Launch:<h1> 
-        <br>
-
-        <div class="row">
           <div class="card">
             <div class="card-body">
-                <span>${days + `d `} </span>
+
+            <span>
+              <h5 class="card-title">${days}</h5>
+              <p class="card-text-unit">DAYS</p>
+            </span>  
+                
             </div>
           </div>
 
           <div class="card">
             <div class="card-body">
-                <span>${hours + `h `} </span> 
+
+            <span>
+              <h5 class="card-title">${hours}</h5>
+              <p class="card-text-unit">HOURS</p>
+            </span> 
+
             </div>
           </div>
 
           <div class="card">
             <div class="card-body">
-                <span>${minutes + `m `} </span>
+
+            <span>
+              <h5 class="card-title">${minutes}</h5>
+              <p class="card-text-unit">MINUTES</p>
+            </span>
+
             </div>
           </div>
 
           <div class="card">
             <div class="card-body">
-                <span>${seconds + `s `} </span>
+
+            <span>
+              <h5 class="card-title">${seconds}</h5>
+              <p class="card-text-unit">SECONDS</p>
+            </span>
+
             </div>
           </div>
-        </div>
-       
-
-
-        </div>
-      </div>
+   
     `);
   
     // If the count down is finished, write some text 

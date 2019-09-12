@@ -148,9 +148,6 @@ li a:hover {
   max-height:100%;
 }
 
-/* .card {
-  margin: -104px 0px 0px 126px;
-} */
 
 .navbar-brand {
   margin-left: 10rem;
@@ -166,6 +163,27 @@ li a:hover {
 }
 
 .card {
-  font-size: 6rem;
+  font-size: 1rem;
+  text-align: center;
 }
-/*# sourceMappingURL=style.css.map */
+
+.card-title {
+  font-size: 7rem;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 10 1 10;
+  width: 15rem;
+  padding: 1.25rem;
+}
+
+p.card-text-unit {
+  text-align: center;
+}
+
+#countdown-header  {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
