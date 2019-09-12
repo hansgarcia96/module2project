@@ -148,12 +148,24 @@ li a:hover {
   max-height:100%;
 }
 
-.card {
+/* .card {
   margin: -104px 0px 0px 126px;
-}
+} */
 
 .navbar-brand {
   margin-left: 10rem;
 }
 
+.display-4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row {
+  justify-content: space-evenly;
+}
+
+.card {
+  font-size: 6rem;
+}
 /*# sourceMappingURL=style.css.map */

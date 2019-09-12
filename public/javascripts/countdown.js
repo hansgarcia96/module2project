@@ -50,13 +50,37 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
     `
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-        <h1 class="display-4">Next Launch: <span>${days + `d ` + hours + `h ` + minutes + `m ` + seconds + `s `}</span></h1>
-      
-        <p class="lead">Mission Name: <span>${nextMissionName}</span></p>
-     
-        <p class="lead">Mission Intel: <span><p>${nextMissionIntel}</p></span></p>
-    
-        <p class="lead">Mission Rocket: <span>${nextMissionRocket}</span></p>
+        <h1 class="display-4">Next Launch:<h1> 
+        <br>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+                <span>${days + `d `} </span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+                <span>${hours + `h `} </span> 
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+                <span>${minutes + `m `} </span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+                <span>${seconds + `s `} </span>
+            </div>
+          </div>
+        </div>
+       
+
+
         </div>
       </div>
     `);
@@ -74,4 +98,47 @@ axios.get('https://api.spacexdata.com/v3/launches/upcoming')
   console.log("An error occure during upcoming launches", err);
 })
 
+/* 
+$('.countdown-container').html(  
+  `
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+      <h1 class="display-4">Next Launch: 
+      <br>
 
+      <div class="card">
+        <div class="card-body">
+            <span>${days + `d `} </span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+            <span>${hours + `h `} </span> 
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+            <span>${minutes + `m `} </span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+            <span>${seconds + `s `} </span>
+        </div>
+      </div>
+ 
+     
+      </h1>
+
+      <p class="lead">Mission Name: <span>${nextMissionName}</span></p>
+   
+      <p class="lead">Mission Intel: <span><p>${nextMissionIntel}</p></span></p>
+  
+      <p class="lead">Mission Rocket: <span>${nextMissionRocket}</span></p>
+      </div>
+    </div>
+  `);
+ */

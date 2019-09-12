@@ -25,7 +25,7 @@ const SpacexApiWrapper = require("spacex-api-wrapper");
 
 mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+  .connect("mongodb://localhost/whitestar", { useNewUrlParser: true })
   .then(() => {
     console.log("Connected to Mongo!");
   })
@@ -125,7 +125,7 @@ app.use((req, res, next) => {
   res.locals.successMessage = req.flash("success");  */
   next();
 });
-
+  
 const landing      = require("./routes/landing");
 app.use("/", landing);
 
