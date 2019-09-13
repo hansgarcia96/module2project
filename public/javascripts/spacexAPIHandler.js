@@ -19,6 +19,7 @@ class APIHandler {
       result.data.map((eachRocket) => {
 
         let list = 
+
         `
         <div class="rocket-info">
             <div class="name"> Rocket Id: <span>${eachRocket.id}</span></div>
@@ -27,6 +28,7 @@ class APIHandler {
             <div class="image">  <img src="${eachRocket.flickr_images[0]}"> </div>
          </div>         
         `
+        
         // append to container
         container.append(list);
       })
