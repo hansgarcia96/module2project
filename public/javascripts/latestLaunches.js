@@ -4,10 +4,12 @@ axios
     let data = result.data;
     // console.log(data)
 
-    let lastThree = data.slice(-3);
-    // console.log("These are the last 3 ", lastThree)
+    // LATEST # OF LAUNCHES
+    // CURRENTLY SET TO 6
+    let latestLaunches = data.slice(-6).reverse();
+    // console.log("These are the last 6 ", latestLaunches)
 
-    var missionName = {};
+    var missionName;
     var date;
     var video;
     var article;
@@ -18,29 +20,35 @@ axios
 
     missionsDiv.html("");
 
-    for (i = 0; i < lastThree.length; i++) {
+    for (i = 0; i < latestLaunches.length; i++) {
       missionsDiv.append(
         `
         <div class="lastMissions">
-          <div class="missionName">${lastThree[i].mission_name}</div>
-          <div class="date">${lastThree[i].launch_date_utc}</div>
-          <div class="rocket">${lastThree[i].rocket.rocket_name}</div>
-          <div class="location">${lastThree[i].launch_site.site_name_long}</div>
-          <div class="video">${lastThree[i].links.video_link}</div>
-          <div class="article">${lastThree[i].links.article_link}</div>
+        <div class="patch"><img src=${latestLaunches[i].links.mission_patch} style="width: 200px;"></div>
+
+        <iframe src="https://www.youtube.com/embed/${latestLaunches[i].links.youtube_id}" width="550" height="300" frameborder="0"></iframe>
+
+        <div class="rocket">${latestLaunches[i].rocket.rocket_name}</div>
+
+          <div class="date">${latestLaunches[i].launch_date_utc}</div>
+ 
+          <div class="location">${latestLaunches[i].launch_site.site_name_long}</div>
+
         </div>
         `
       );
     }
-
+    // MORE DIVS NOT IN USE HERE
+    //         <div class="missionName">${lastThree[i].mission_name}</div>
+    //         <div class="article">${lastThree[i].links.article_link}</div>
     // single
 
-    for (i = 0; i < lastThree.length; i++) {
+    for (i = 0; i < latestLaunches.length; i++) {
       // console.log(lastThree[i].mission_name)
-      var missionName = lastThree[i].mission_name;
-      var date = lastThree[i].launch_date_utc;
-      var video = lastThree[i].links.video_link;
-      var article = lastThree[i].links.article_link;
+      var missionName = latestLaunches[i].mission_name;
+      var date = latestLaunches[i].launch_date_utc;
+      var video = latestLaunches[i].links.video_link;
+      var article = latestLaunches[i].links.article_link;
 
       console.log("Mission ", missionName);
       console.log("Date ", date);
@@ -53,7 +61,7 @@ axios
     console.log(article);
 
     // APPEND TO lastMission div
-    
+
     // -------------- working single ----------
     // $(".lastMissions").html(
     //   `
