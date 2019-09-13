@@ -40,10 +40,10 @@ a {
 #form {
   width: 380px;
   text-align: center;
-  font-size: 20px;
+  font-size: 50px;
   z-index: 1;
   opacity: 200.5;
-  height: 511px; 
+  height: 50%; 
   width: fit-content}
 
 #form label {
@@ -93,6 +93,10 @@ a {
   width: 60%; 
   font-size: 32px;
   font-family: 'Montserrat', sans-serif;
+}
+
+#form p {
+  margin-top: 51px;
 }
 
 #container {

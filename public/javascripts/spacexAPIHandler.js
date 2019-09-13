@@ -136,24 +136,29 @@ class APIHandler {
 
     const container = $('.news-container')
 
-    axios.get('https://spaceflightnewsapi.net/api/v1/articles?news_site=spacex')
+    axios.get('https://spaceflightnewsapi.net/api/v1/articles')
     .then((result) => {
 
       console.log("the news object is: ", result);
       console.log('the news.data is: ', result.data);
       console.log('the news.data.docs is: ', result.data.docs);
+      console.log('the newsdata.data.docs.title is: ', result.data.docs.title);
+      
 
       container.html("");
 
       // display the data
       result.data.docs.map((eachNews) => {
+        console.log('eachNews.title -> ', eachNews.title);
+        
         
         let list = 
         `
         <div class="news-info">
+            <div class="title"> <span><h2>${eachNews.title}</h2></span></div>
             <div class="site">Site: <span>${eachNews.news_site_long}</span></div>
             <div class="url"> url: <span><a href="${eachNews.url}">${eachNews.url}</a></span></div>
-            <div class="image"> <img src="${eachNews.featured_image}"> </div>
+            <div class="news-image"> <img src="${eachNews.featured_image}"> </div>
          </div>         
         `
         // append to container
