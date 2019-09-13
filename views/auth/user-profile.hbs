@@ -21,18 +21,33 @@
 
   <div class="jumbotron jumbotron-fluid">
     <div class="countdown-container">
-      <div class="countdown"></div>
+        <h3 id="countdown-header">NEXT LAUNCH:</h3>
+        <div class="row">
+        
+        </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="stuff">
+
+      <div class="card" style="width: 20rem;">
+        <img src="{{currentUser.image}}" class="card-img-top" alt="profile_pic">
+        <div class="card-body">
+          <h5 class="card-title-profile">Space Cadet:</h5>
+          <h3 class="card-text-profile"> {{currentUser.username}}</h3>
+        </div>
+      </div>
+
+
+ 
+
     </div>
   </div>
 
 
-  <div class="card" style="width: 20rem;">
-    <img src="{{currentUser.image}}" class="card-img-top" alt="profile_pic">
-    <div class="card-body">
-      <h3 class="card-text">Hello, {{currentUser.username}}</h3>
-    </div>
-  </div>
-
+    
+    
 
   {{/if}}
 
