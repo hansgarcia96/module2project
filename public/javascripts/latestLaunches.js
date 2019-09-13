@@ -23,6 +23,11 @@ axios
         `
         <div class="lastMissions">
           <div class="missionName">${lastThree[i].mission_name}</div>
+          <div class="date">${lastThree[i].launch_date_utc}</div>
+          <div class="rocket">${lastThree[i].rocket.rocket_name}</div>
+          <div class="location">${lastThree[i].launch_site.site_name_long}</div>
+          <div class="video">${lastThree[i].links.video_link}</div>
+          <div class="article">${lastThree[i].links.article_link}</div>
         </div>
         `
       );
