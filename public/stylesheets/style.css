@@ -1,18 +1,24 @@
 body {
   padding: 0;
-  font: 20px "Lora", Helvetica, Arial, sans-serif; 
+  font: 20px "Lora", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 a {
-  color: #e01515f7; }
+  color: #e01515f7;
+}
 
-
-/* VIDEO BACKGROUND  */  
+/* VIDEO BACKGROUND  */
 .section {
   position: relative;
   width: 100%;
@@ -27,7 +33,8 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+}
 
 .color-overlay {
   position: absolute;
@@ -35,7 +42,8 @@ a {
   left: 0;
   width: 100%;
   height: 100vh;
-  opacity: 1; }
+  opacity: 1;
+}
 
 #form {
   width: 380px;
@@ -43,15 +51,17 @@ a {
   font-size: 50px;
   z-index: 1;
   opacity: 200.5;
-  height: 50%; 
-  width: fit-content}
+  height: 511px;
+  width: fit-content;
+}
 
 #form label {
   color: #e01515f7;
   display: inline-block;
   text-align: center;
   width: 100%;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 #form input,
 #form button {
@@ -60,7 +70,8 @@ a {
   outline: 0;
   padding: 4px;
   width: 35%;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 #form button {
   background: #e01515f7;
@@ -73,15 +84,17 @@ a {
   padding: 8px 16px;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  transition: .3s ease background;
-  width: 30%; }
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease background;
+  width: 30%;
+}
 
 #form button:hover {
   background: #fff;
   color: #e01515f7;
-  font-family: 'Montserrat', sans-serif;
-  transition: .3s ease background; }
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease background;
+}
 
 .error-message {
   background: #e01515f7;
@@ -90,9 +103,9 @@ a {
   color: #fff;
   margin: 28px 125px;
   padding: 0;
-  width: 60%; 
+  width: 60%;
   font-size: 32px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #form p {
@@ -105,14 +118,15 @@ a {
   height: 400px;
   /* or other desired height */
   width: 415px;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 #profile-picture {
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  height: auto; }
-
+  height: auto;
+}
 
 /* NAVIGATION */
 ul {
@@ -147,11 +161,10 @@ li a:hover {
   width: 50px;
   height: 50px;
   margin-right: 20px;
-  margin-top: 15px;    /* if you want it vertically middle of the navbar. */
-  max-width:100%;
-  max-height:100%;
+  margin-top: 15px; /* if you want it vertically middle of the navbar. */
+  max-width: 100%;
+  max-height: 100%;
 }
-
 
 .navbar-brand {
   margin-left: 10rem;
@@ -186,8 +199,7 @@ p.card-text-unit {
   text-align: center;
 }
 
-#countdown-header  {
+#countdown-header {
   text-align: center;
   margin-bottom: 2rem;
 }
-
