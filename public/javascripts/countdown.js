@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+const moment = require("moment");
+
 axios
   .get("https://api.spacexdata.com/v3/launches/upcoming")
   .then(result => {
@@ -5,6 +9,11 @@ axios
     let nextLaunchDateLocal = result.data[0].launch_date_local;
     let nextLaunchUtc = result.data[0].launch_date_utc;
     let nextLaunchDate = nextLaunchUtc;
+    let formatedDate = moment(nextLaunchUtc).format(
+      "dddd, MMMM Do YYYY, h:mm:ss a"
+    );
+
+    console.log(formatedDate);
 
     let missionName = nextLaunchData.mission_name;
     let rocket = nextLaunchData.rocket.rocket_name;
