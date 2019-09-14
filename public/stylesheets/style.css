@@ -1,6 +1,9 @@
 body {
   padding: 0;
   font: 20px "Lora", Helvetica, Arial, sans-serif;
+  background: url("../images/idk.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
 h1,
@@ -51,7 +54,7 @@ a {
   font-size: 50px;
   z-index: 1;
   opacity: 200.5;
-  height: 511px;
+  height: 67%;
   width: fit-content;
 }
 
@@ -119,6 +122,8 @@ a {
   /* or other desired height */
   width: 415px;
   overflow: hidden;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 #profile-picture {
@@ -182,10 +187,13 @@ li a:hover {
 .card {
   font-size: 1rem;
   text-align: center;
+  opacity: .9;
+  background-color: #ffffff;
 }
 
 .card-title {
   font-size: 7rem;
+  color: red;
 }
 
 .card-body {
@@ -193,6 +201,7 @@ li a:hover {
   flex: 10 1 10;
   width: 15rem;
   padding: 1.25rem;
+  color: red;
 }
 
 p.card-text-unit {
@@ -202,4 +211,39 @@ p.card-text-unit {
 #countdown-header {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.jumbotron-fluid {
+  opacity: .9;
+  color: red;
+  background-color: #0b1e2c;
+}
+
+.navbar {
+  color: red;
+  background-color: #051c2d;
+}
+
+.missionName {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+
+.nextLaunchInfo {
+  margin-top: 50px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  border: solid white 2px;
+}
+
+.lastMissions {
+  text-align: center;
+}
+
+.stuff {
+  position:absolute;
+  top:85px;
+  left:35px;
 }
