@@ -47,10 +47,10 @@ class APIHandler {
     axios.get(`https://api.spacexdata.com/v3/rockets/${theId}`)
     .then((theRocket) => {
 
-      console.log("the single rocket is: ", theRocket);
+/*       console.log("the single rocket is: ", theRocket);
       console.log("the rocket id: ", theRocket.data.id);
       console.log("the rocket name is: ", theRocket.data.rocket_name);
-      console.log("the flicker: ", theRocket.data.flickr_images[0]);
+      console.log("the flicker: ", theRocket.data.flickr_images[0]); */
       container.html("");
 
       // Display information
@@ -85,9 +85,9 @@ class APIHandler {
         let list = 
         `
         <div class="mission-info">
-            <div class="name"> Name: <span>${eachMission.mission_name}</span></div>
-            <div class="wikipedia">Wikipida: <span>${eachMission.wikipedia}</span></div>
-            <div class="twitter">Twitter: <span>${eachMission.twitter}</span></div>
+            <div class="name">  <span><h2>${eachMission.mission_name}</h2></span></div>
+            <div class="wikipedia"> <span><a href="${eachMission.wikipedia}">${eachMission.wikipedia}</a></span></div>
+            <div class="twitter"> <span><a href="${eachMission.twitter}">${eachMission.twitter}</a></span></div>
             <div class="description"> <span>${eachMission.description}</span> </div>
          </div>         
         `
@@ -117,9 +117,9 @@ class APIHandler {
       let mission = 
       `
       <div class="mission-info">
-          <div class="name"> Name: <span>${singleMission.data.mission_name}</span></div>
-          <div class="wikipedia">Wikipida: <span>${singleMission.data.wikipedia}</span></div>
-          <div class="twitter">Twitter: <span>${singleMission.data.twitter}</span></div>
+          <div class="name"><span><h2>${singleMission.data.mission_name}</h2></span></div>
+          <div class="wikipedia"> <span><a href="${singleMission.data.wikipedia}">${singleMission.data.wikipedia}</a></span></div>
+          <div class="twitter"> <span><a href="${singleMission.data.twitter}">${singleMission.data.twitter}</a></span></div>
           <div class="description"> <span>${singleMission.data.description}</span> </div>
        </div>         
       `
