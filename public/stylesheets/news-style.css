@@ -7,12 +7,14 @@
 body {
   font: 14px "Lora", Helvetica, Arial, sans-serif;
   color: white;
-  background: url("../images/space-is-essential.jpeg") no-repeat center center fixed;
+  background: url("../images/space-is-essential.jpeg") no-repeat center center
+    fixed;
   background-size: cover;
 }
 
-h1, h2 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2 {
+  font-family: "Montserrat", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   color: #dedede;
@@ -40,9 +42,9 @@ button {
   width: 100%;
   margin: 50px auto 0;
   padding: 10px;
-  border-radius: 20px;
-/*   background-color: rgba(88, 98, 123, 0.95); */
-  text-align: center;
+  /* border-radius: 20px; */
+  /*   background-color: rgba(88, 98, 123, 0.95);
+  text-align: center; */
 }
 
 .news-container {
@@ -105,4 +107,3 @@ img {
 a {
   color: red;
 }
-
