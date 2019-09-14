@@ -242,12 +242,18 @@ p.card-text-unit {
   border: solid white 2px;
 }
 
-.lastMissions {
-  text-align: center;
-}
 
 .stuff {
   position:absolute;
   top:85px;
   left:35px;
+}
+          
+.lastMissions {
+  text-align: center;
+  margin-top: 15%
+}
+
+.patch {
+  margin-bottom: 5%;
 }
