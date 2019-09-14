@@ -50,15 +50,15 @@ axios
       var video = latestLaunches[i].links.video_link;
       var article = latestLaunches[i].links.article_link;
 
-      console.log("Mission ", missionName);
-      console.log("Date ", date);
-      console.log("Video ", video);
+      // console.log("Mission ", missionName);
+      // console.log("Date ", date);
+      // console.log("Video ", video);
     }
 
-    console.log(video);
-    console.log(missionName);
-    console.log(date);
-    console.log(article);
+    // console.log(video);
+    // console.log(missionName);
+    // console.log(date);
+    // console.log(article);
 
     // APPEND TO lastMission div
 

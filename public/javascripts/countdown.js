@@ -120,7 +120,7 @@ axios
     }, 1000);
   })
   .catch(err => {
-    console.log("An error occure during upcoming launches", err);
+    console.log("An error occured during upcoming launches", err);
   });
 
 /* 

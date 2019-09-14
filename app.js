@@ -18,10 +18,6 @@ const flash = require("connect-flash");
 
 const User = require("./models/User");
 
-let nasaApi =
-  "https://api.nasa.gov/planetary/apod?api_key=l3UCNqsJiwwnylLaPuctuGF6khi50dYWiHqTqIub";
-const SpacexApiWrapper = require("spacex-api-wrapper");
-
 mongoose.Promise = Promise;
 mongoose
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
@@ -95,13 +91,13 @@ passport.use(
     },
     (req, username, password, next) => {
       User.findOne({ username }, (err, user) => {
-        console.log("MOTHER FUCKER: ", username);
+        console.log("user: ", username);
         if (err) {
           //console.log("this is the fucking error: \n", err);
           return next(err);
         }
         if (!user) {
-          console.log("this is the fucking error: \n", err);
+          console.log("this is the error: \n", err);
           return next(null, false, { message: "Incorrect username" });
         }
         if (!bcrypt.compareSync(password, user.password)) {
