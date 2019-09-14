@@ -231,7 +231,7 @@ axios
 
 $(document).ready(function() {
   setTimeout(() => {
-    $("html,body").animate({ scrollTop: $(`#rocketInfo`).offset().top }, 300);
+    $("html,body").animate({ scrollTop: $(`#rocketInfo`).offset().top }, 900);
   }, 1000);
 
   // window.scrollTo(0, document.querySelector("#rocketContainer").scrollHeight);
