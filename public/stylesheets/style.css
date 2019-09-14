@@ -189,6 +189,7 @@ li a:hover {
   text-align: center;
   opacity: .9;
   background-color: #ffffff;
+  color: black;
 }
 
 .card-title {
@@ -201,7 +202,7 @@ li a:hover {
   flex: 10 1 10;
   width: 15rem;
   padding: 1.25rem;
-  color: red;
+  color: black;
 }
 
 p.card-text-unit {
@@ -211,12 +212,15 @@ p.card-text-unit {
 #countdown-header {
   text-align: center;
   margin-bottom: 2rem;
+  color: black;
 }
 
 .jumbotron-fluid {
   opacity: .9;
-  color: red;
-  background-color: #0b1e2c;
+/*   color: red;
+  background-color: #0b1e2c; */
+  z-index: 1;
+  color: black;
 }
 
 .navbar {
