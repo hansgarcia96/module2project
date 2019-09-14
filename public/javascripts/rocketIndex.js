@@ -184,8 +184,6 @@ axios
     let bfrPayloadName = bfr.payload_weights[0].name;
     let bfrPayloadLbs = bfr.payload_weights[0].lb;
 
-    
-
     // APPEND
     $(".bfr").html(`
     
@@ -230,3 +228,18 @@ axios
   .catch(err => {
     console.log("Error my dude", err);
   }); // END OF .CATCH
+
+$(document).ready(function() {
+  setTimeout(() => {
+    $("html,body").animate({ scrollTop: $(`#rocketInfo`).offset().top }, 300);
+  }, 1000);
+
+  // window.scrollTo(0, document.querySelector("#rocketContainer").scrollHeight);
+
+  // document
+  //   .getElementById("rocketInfo")
+  //   .scrollIntoView({ block: "start", behavior: "smooth" });
+
+  // $("#rocketInfo").animatedScroll({ easing: "easeOutExpo" });
+  return false;
+});
