@@ -80,7 +80,7 @@ button {
 }
 
 .mission-info div span {
-  color: #dedede;
+  color: red;
   position: inherit;
 }
 
@@ -96,8 +96,7 @@ a {
 }
 
 .patch img{
-  margin-top: 20px;
-  height: 400px;
+  height: 350px;
   
 
 }

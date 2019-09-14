@@ -88,10 +88,12 @@ class APIHandler {
           let list = `
         <div class="mission-info">
             <div class="name"><span><h2>${eachMission.mission_name}</h2></span></div>
-            <div class="wikipedia"><span><a href="${eachMission.links.wikipedia}">Wikipedia</a></span></div>
+            
             <div class="site"><span>${eachMission.launch_site.site_name_long}</span></div>
+            <div class="date"><span>${eachMission.launch_date_utc}</span></div>
             <div class="details"><span>${eachMission.details}</span></div>
             <div class="patch"><img src="${eachMission.links.mission_patch}"></div>
+            <div class="wikipedia"><span><a href="${eachMission.links.wikipedia}">Article</a></span></div>
            
          </div>         
         `;
