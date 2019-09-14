@@ -187,7 +187,7 @@ li a:hover {
 .card {
   font-size: 1rem;
   text-align: center;
-  opacity: .9;
+  opacity: 0.9;
   background-color: #ffffff;
 }
 
@@ -214,7 +214,7 @@ p.card-text-unit {
 }
 
 .jumbotron-fluid {
-  opacity: .9;
+  opacity: 0.9;
   color: red;
   background-color: #0b1e2c;
 }
@@ -243,7 +243,31 @@ p.card-text-unit {
 }
 
 .stuff {
-  position:absolute;
-  top:85px;
-  left:35px;
+  position: absolute;
+  top: 85px;
+  left: 35px;
+}
+
+button {
+  background: #e01515f7;
+  border: 1px solid #e01515f7;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease background;
+  width: 224px;
+  margin: 10px;
+}
+
+button:hover {
+  background: #fff;
+  color: #e01515f7;
+  font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease background;
 }

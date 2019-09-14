@@ -13,8 +13,6 @@ axios
     //   var description = data[i].description;
     // }
 
-    // console.log(details)
-
     f1 = data[0];
     f9 = data[1];
     fh = data[2];
@@ -30,6 +28,8 @@ axios
     let f1Diameter = f1.diameter.feet;
     let f1Mass = f1.mass.lb;
     let f1Payloads = f1.payload_weights;
+    let f1PayloadName = f1.payload_weights[0].name;
+    let f1PayloadLbs = f1.payload_weights[0].lb;
 
     // APPEND
     $(".f1").html(`
@@ -39,12 +39,12 @@ axios
       </div>
 
       <!-- SPECS MODAL -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#f1">
   SPECS
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="f1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,6 +58,7 @@ axios
         <h4>Height: ${f1Height} feet</h4>
         <h4>Diameter: ${f1Diameter} feet</h4>
         <h4>Mass: ${f1Mass} lbs</h4>
+        <h4>${f1PayloadName + " Capacity: " + f1PayloadLbs + "lbs"}</h4>
         <h6>${f1Description}</h6>
         <h4>$${f1Cost} Dollars</h4>
       </div>
@@ -77,21 +78,24 @@ axios
     let f9Diameter = f9.diameter.feet;
     let f9Mass = f9.mass.lb;
     let f9Payloads = f9.payload_weights;
+    let f9PayloadName = f9.payload_weights[0].name;
+    let f9PayloadLbs = f9.payload_weights[0].lb;
 
     // APPEND
     $(".f9").html(`
     <div class="f9">
       <img src="https://spacexmissionwatch.com/static/be50af34c1b93d0deaff9b72b0af7c3f/b9575/falcon-9.webp">
       <h2>${f9Name}</h2>
-    </div>
+    
 
+    
     <!-- SPECS MODAL -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#f9">
   SPECS
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="f9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -105,12 +109,15 @@ axios
         <h4>Height: ${f9Height} feet</h4>
         <h4>Diameter: ${f9Diameter} feet</h4>
         <h4>Mass: ${f9Mass} lbs</h4>
+        <h4>${f9PayloadName + " Capacity: " + f9PayloadLbs + "lbs"}</h4>
         <h6>${f9Description}</h6>
         <h4>$${f9Cost} Dollars</h4>
         
       </div>
     </div>
   </div>
+</div>
+
 </div>
     `);
 
@@ -124,6 +131,8 @@ axios
     let fhDiameter = fh.diameter.feet;
     let fhMass = fh.mass.lb;
     let fhPayloads = fh.payload_weights;
+    let fhPayloadName = fh.payload_weights[0].name;
+    let fhPayloadLbs = fh.payload_weights[0].lb;
 
     // APPEND
     $(".fh").html(`
@@ -134,12 +143,12 @@ axios
     </div>
 
     <!-- SPECS MODAL -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#fh">
   SPECS
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="fh" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -153,6 +162,7 @@ axios
         <h4>Height: ${fhHeight} feet</h4>
         <h4>Diameter: ${fhDiameter} feet</h4>
         <h4>Mass: ${fhMass} lbs</h4>
+        <h4>${fhPayloadName + " Capacity: " + fhPayloadLbs + "lbs"}</h4>
         <h6>${fhDescription}</h6>
         <h4>$${fhCost} Dollars</h4>
       </div>
@@ -171,8 +181,10 @@ axios
     let bfrHeight = bfr.height.feet;
     let bfrDiameter = bfr.diameter.feet;
     let bfrMass = bfr.mass.lb;
-    let bfrPayloads = bfr.payload_weights;
+    let bfrPayloadName = bfr.payload_weights[0].name;
+    let bfrPayloadLbs = bfr.payload_weights[0].lb;
 
+    
 
     // APPEND
     $(".bfr").html(`
@@ -185,12 +197,12 @@ axios
  
 
 <!-- SPECS MODAL -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bfr">
   SPECS
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="bfr" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -204,6 +216,7 @@ axios
         <h4>Height: ${bfrHeight} feet</h4>
         <h4>Diameter: ${bfrDiameter} feet</h4>
         <h4>Mass: ${bfrMass} lbs</h4>
+        <h4>${bfrPayloadName + " Capacity: " + bfrPayloadLbs + "lbs"}</h4>
         <h6>${bfrDescription}</h6>
         <h4>$${bfrCost} Dollars</h4>
       </div>

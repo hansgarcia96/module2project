@@ -17,70 +17,41 @@ axios
     let missionsDiv = $(".lastMissions");
 
     // three
-
+// VIDEO STUFF: <iframe src="https://www.youtube.com/embed/${latestLaunches[i].links.youtube_id}" class="align-self-center mr-3" frameborder="0"></iframe>
+// <iframe src="https://www.youtube.com/embed/" class="align-self-center mr-3" frameborder="0"></iframe>
     missionsDiv.html("");
 
     for (i = 0; i < latestLaunches.length; i++) {
+      
+
+
+
+
+
       missionsDiv.append(
         `
-        <div class="lastMissions">
-        <div class="patch"><img src=${latestLaunches[i].links.mission_patch} style="width: 200px;"></div>
+            <div class="media">
+              <img src="${latestLaunches[i].links.mission_patch}" style="height: 200px; width: 200px; "class="align-self-center mr-3">
+              <div class="media-body">
+                <h1 class="mt-0 mb-1">${latestLaunches[i].mission_name}</h1>
+                <h2 class="mt-0 mb-1">${latestLaunches[i].rocket.rocket_name}</h2>
+                <h5 class="mt-0 mb-1">${latestLaunches[i].launch_date_utc}</h5>
+                <h5 class="mt-0 mb-1">${latestLaunches[i].launch_site.site_name_long}</h5>
+                <h3 class="mt-0 mb-1" style="color: green;">SUCCESS</h3>
 
-        <iframe src="https://www.youtube.com/embed/${latestLaunches[i].links.youtube_id}" width="550" height="300" frameborder="0"></iframe>
+              </div>
 
-        <div class="rocket">${latestLaunches[i].rocket.rocket_name}</div>
 
-          <div class="date">${latestLaunches[i].launch_date_utc}</div>
- 
-          <div class="location">${latestLaunches[i].launch_site.site_name_long}</div>
+              <iframe src="https://www.youtube.com/embed/${latestLaunches[i].links.youtube_id}" width="225" height="200" frameborder="0"></iframe>
+              
+            </div>
 
-        </div>
         `
       );
     }
-    // MORE DIVS NOT IN USE HERE
-    //         <div class="missionName">${lastThree[i].mission_name}</div>
-    //         <div class="article">${lastThree[i].links.article_link}</div>
-    // single
-
-    for (i = 0; i < latestLaunches.length; i++) {
-      // console.log(lastThree[i].mission_name)
-      var missionName = latestLaunches[i].mission_name;
-      var date = latestLaunches[i].launch_date_utc;
-      var video = latestLaunches[i].links.video_link;
-      var article = latestLaunches[i].links.article_link;
-
-      // console.log("Mission ", missionName);
-      // console.log("Date ", date);
-      // console.log("Video ", video);
-    }
-
-    // console.log(video);
-    // console.log(missionName);
-    // console.log(date);
-    // console.log(article);
-
-    // APPEND TO lastMission div
-
-    // -------------- working single ----------
-    // $(".lastMissions").html(
-    //   `
-    //   <div>${missionName}</div>
-    //   `
-    // );
-
-    // ------------ end of working single ----------
-
-    // ---------- cruddy way ------------
-
-    // let lastLaunch = data[82];
-    // console.log("this is the lastest launch ", lastLaunch);
-
-    // for(let i = 77; i < 82; i++) {
-    //   console.log(data[i])
-    // }
+    
   }) // END OF .then
 
   .catch(err => {
-    console.log("error my nigga", err);
+    console.log("error my dude", err);
   });

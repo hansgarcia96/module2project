@@ -1,3 +1,9 @@
+body {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 .rocket-container {
   display: flex;
   align-items: flex-end;
@@ -11,10 +17,13 @@
   }
 }
 
-body {
-  background-color: lightblue;
-}
+
 
 .f1, .f9, .fh, .bfr {
   text-align: center;
+  color:#9c0c0c;
+}
+
+.btn {
+  background-color: #9c0c0c;
 }
