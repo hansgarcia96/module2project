@@ -25,13 +25,44 @@ axios
     let f1Cost = f1.cost_per_launch;
     let f1Description = f1.description;
 
+    let f1FirstLaunch = f1.first_flight;
+    let f1Height = f1.height.feet;
+    let f1Diameter = f1.diameter.feet;
+    let f1Mass = f1.mass.lb;
+    let f1Payloads = f1.payload_weights;
+
     // APPEND
     $(".f1").html(`
-<div class="f1">
-    <img src="https://spacexmissionwatch.com/static/16f013f76f1744544427d97bde6938ce/02ed2/falcon-1.webp">
-    <h2>${f1Name}</h2>
+      <div class="f1">
+          <img src="https://spacexmissionwatch.com/static/16f013f76f1744544427d97bde6938ce/02ed2/falcon-1.webp">
+          <h2>${f1Name}</h2>
+      </div>
 
-    <p>${f1Cost}</p>
+      <!-- SPECS MODAL -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  SPECS
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle">${f1Name}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>First Launch: ${f1FirstLaunch}</h4>
+        <h4>Height: ${f1Height} feet</h4>
+        <h4>Diameter: ${f1Diameter} feet</h4>
+        <h4>Mass: ${f1Mass} lbs</h4>
+        <h6>${f1Description}</h6>
+        <h4>$${f1Cost} Dollars</h4>
+      </div>
+    </div>
+  </div>
 </div>
 
 `);
@@ -41,14 +72,46 @@ axios
     let f9Cost = f9.cost_per_launch;
     let f9Description = f9.description;
 
+    let f9FirstLaunch = f9.first_flight;
+    let f9Height = f9.height.feet;
+    let f9Diameter = f9.diameter.feet;
+    let f9Mass = f9.mass.lb;
+    let f9Payloads = f9.payload_weights;
+
     // APPEND
     $(".f9").html(`
     <div class="f9">
-    <img src="https://spacexmissionwatch.com/static/be50af34c1b93d0deaff9b72b0af7c3f/b9575/falcon-9.webp">
-    <h2>${f9Name}</h2>
-
-    <p>${f9Cost}</p>
+      <img src="https://spacexmissionwatch.com/static/be50af34c1b93d0deaff9b72b0af7c3f/b9575/falcon-9.webp">
+      <h2>${f9Name}</h2>
     </div>
+
+    <!-- SPECS MODAL -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  SPECS
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle">${f9Name}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>First Launch: ${f9FirstLaunch}</h4>
+        <h4>Height: ${f9Height} feet</h4>
+        <h4>Diameter: ${f9Diameter} feet</h4>
+        <h4>Mass: ${f9Mass} lbs</h4>
+        <h6>${f9Description}</h6>
+        <h4>$${f9Cost} Dollars</h4>
+        
+      </div>
+    </div>
+  </div>
+</div>
     `);
 
     // ---------------------- FALCON HEAVY -----------------------
@@ -56,15 +119,46 @@ axios
     let fhCost = fh.cost_per_launch;
     let fhDescription = fh.description;
 
+    let fhFirstLaunch = fh.first_flight;
+    let fhHeight = fh.height.feet;
+    let fhDiameter = fh.diameter.feet;
+    let fhMass = fh.mass.lb;
+    let fhPayloads = fh.payload_weights;
+
     // APPEND
     $(".fh").html(`
     
     <div class="fh">
-    <img src="https://spacexmissionwatch.com/static/2ad3bb3851e4a4d0300c0e6540632693/64c4d/falcon-heavy.webp">
-    <h2>${fhName}</h2>
-
-    <p>${fhCost}</p>
+      <img src="https://spacexmissionwatch.com/static/2ad3bb3851e4a4d0300c0e6540632693/64c4d/falcon-heavy.webp">
+      <h2>${fhName}</h2>
     </div>
+
+    <!-- SPECS MODAL -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  SPECS
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle">${fhName}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>First Launch: ${fhFirstLaunch}</h4>
+        <h4>Height: ${fhHeight} feet</h4>
+        <h4>Diameter: ${fhDiameter} feet</h4>
+        <h4>Mass: ${fhMass} lbs</h4>
+        <h6>${fhDescription}</h6>
+        <h4>$${fhCost} Dollars</h4>
+      </div>
+    </div>
+  </div>
+</div>
     
     `);
 
@@ -73,28 +167,51 @@ axios
     let bfrCost = bfr.cost_per_launch;
     let bfrDescription = bfr.description;
 
+    let bfrFirstLaunch = bfr.first_flight;
+    let bfrHeight = bfr.height.feet;
+    let bfrDiameter = bfr.diameter.feet;
+    let bfrMass = bfr.mass.lb;
+    let bfrPayloads = bfr.payload_weights;
+
+
     // APPEND
     $(".bfr").html(`
     
     <div class="fh">
       <img src="https://spacexmissionwatch.com/static/bfc94f6d800ef5afa1b4e60c39b5a1be/b9575/bfr.webp" style="height: 2600px">
       <h2>${bfrName}</h2>
-      <p>${bfrCost}</p>
-      <p>
-      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Link with href
-      </a>
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Button with data-target
-      </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+
+ 
+
+<!-- SPECS MODAL -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  SPECS
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalCenterTitle">${bfrName}</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4>First Launch: ${bfrFirstLaunch}</h4>
+        <h4>Height: ${bfrHeight} feet</h4>
+        <h4>Diameter: ${bfrDiameter} feet</h4>
+        <h4>Mass: ${bfrMass} lbs</h4>
+        <h6>${bfrDescription}</h6>
+        <h4>$${bfrCost} Dollars</h4>
       </div>
     </div>
-    
-    
+  </div>
+</div>
+
+  
     `);
   }) // END OF .THEN
   .catch(err => {
