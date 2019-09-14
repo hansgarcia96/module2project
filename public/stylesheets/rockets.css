@@ -1,0 +1,20 @@
+.rocket-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+@media all and (max-width: 768px) {
+  .rocket-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+body {
+  background-color: lightblue;
+}
+
+.f1, .f9, .fh, .bfr {
+  text-align: center;
+}
